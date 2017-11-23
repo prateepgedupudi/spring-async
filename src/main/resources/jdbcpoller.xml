@@ -15,7 +15,7 @@
             http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
 
     <int-jdbc:inbound-channel-adapter id="dataChannel"
-                                      query="select * from test where status='NEW'" data-source="dataSource" />
+                                      query="select * from test where status='NEW'" data-source="dataSource" max-rows-per-poll="2"/>
 
     <int:channel id="dataChannel">
         <int:queue />
